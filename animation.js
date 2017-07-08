@@ -14,7 +14,21 @@ function sprite(options){
     obj.width = options.width;
     obj.height = options.height;
     obj.context = options.context;
-    
+
+    obj.render = function(){
+        obj.content.drawImage(
+            obj.image,
+            0,
+            0,
+            obj.width,
+            obj.height,
+            0,
+            0,
+            obj.width,
+            obj.height
+        )
+    };
+
     return obj;
 }
 
@@ -29,3 +43,4 @@ var coin = sprite({
     image: image
 });
 
+coin.render();
